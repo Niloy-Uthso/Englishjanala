@@ -11,6 +11,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<script src="https://kit.fontawesome.com/6f70ac3e9d.js" crossorigin="anonymous"></script>
 <style>
     .poppins-regular {
   font-family: "Poppins", sans-serif;
@@ -20,35 +22,35 @@
 </style>
 
 </head>
-<body id="" class="poppins-regular">
+<body id="" class="poppins-regular ">
      
-<nav class="flex justify-around border " style="background-color: rgba(198, 189, 189, 1);">
+<nav id="khela" class="flex fixed w-full justify-around  hidden mb-48" style="background-color: rgba(198, 189, 189, 1);">
 <div class="flex items-center justify-center ">
     <h1 class="font-semibold text-lg ">English</h1>
     <img src="./styles/assets/logo.png" alt="">
     <h1>জানালা</h1>
 
 </div>
-<div class="flex items-center justify-end gap-2 border w-3/6 border-red-800 ">
-    <button class="flex border gap-1 p-1 rounded-md hover:bg-blue-500" style="border-color: rgba(66, 42, 213, 1);">
+<div class="flex items-center justify-end gap-2  w-3/6  ">
+    <button onclick="met('faq')" class="flex border gap-1 p-1 rounded-md hover:bg-blue-500" style="border-color: rgba(66, 42, 213, 1);">
 
         <img class="w-4" src="./styles/assets/fa-circle-question.png" alt="">
         <p class="font-semibold text-xs " style="color: rgba(66, 42, 213, 1);">FAQ</p>
     </button>
-    <button class="flex border hover:bg-blue-500 gap-1 p-1 rounded-md " style="border-color: rgba(66, 42, 213, 1);">
+    <button onclick="met('khela1')" class="flex border hover:bg-blue-500 gap-1 p-1 rounded-md " style="border-color: rgba(66, 42, 213, 1);">
      <img class="w-4" src="./styles/assets/fa-book-open.png" alt="">
      <p class="font-semibold text-xs " style="color: rgba(66, 42, 213, 1);">Learn</p>
     </button>
-    <button class="flex border hover:bg-blue-500 gap-1 p-1 rounded-md " style="border-color: rgba(66, 42, 213, 1);">
-
+    <button onclick="meta()" class="flex border hover:bg-blue-500 gap-1 p-1 rounded-md " style="border-color: rgba(66, 42, 213, 1);">
+        <!-- onclick="location.href='#targetSection'" -->
         <img class="w-4" src="./styles/assets/fa-arrow-right-from-bracket.png" alt="">
         <p class="font-semibold text-xs " style="color: rgba(66, 42, 213, 1);">Logout</p>
     </button>
 </div>
 </nav>
 
-<section class="flex items-center justify-evenly border mb-8">
-    <div class=" border">
+<section id="he" class="flex items-center justify-evenly  mb-8">
+    <div class=" ">
 
         <h1 class="font-bold text-4xl "><span style="color: rgba(0, 188, 255, 1);">English</span> is Easy!!</h1>
 
@@ -57,18 +59,18 @@
             আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি Level এ
         </p>
         <br>
-        <input type="text" name="" id="" placeholder="Input your name"><br><br>
-        <input type="password" name="" id=""><br><br>
-        <button class="bg-blue-900 font-bold text-sm text-white p-2 rounded-md">Get started</button>
+        <input type="text" name="" id="name" placeholder="Input your name"><br><br>
+        <input type="password" name="" id="password"><br><br>
+        <button id="start" class="bg-blue-900 font-bold text-sm text-white p-2 rounded-md">Get started</button>
     </div>
 
     <div>
-        <img class=" border w-[480px]" src="./styles/assets/hero-student.png" alt="">
+        <img class=" w-[480px]" src="./styles/assets/hero-student.png" alt="">
     </div>
 </section>
 
-<section class="flex flex-col items-center justify-between border gap-8 border-red-950  mb-14" >
-    <h1 class="font-bold text-4xl "><span style="color: rgba(0, 188, 255, 1);">Let's</span>Learn Vocabularies</h1>
+<section id="khela1" class="flex hidden  flex-col items-center  gap-0  mb-11" >
+    <h1 id="ch" class="font-bold text-4xl  mt-40"><span style="color: rgba(0, 188, 255, 1);">Let's</span>Learn Vocabularies</h1>
 
     <div id="firstcontainer" class="flex gap-2" >
 
@@ -77,7 +79,7 @@
     
 </section>
 
-<section id="msg" class=" w-[80%] mx-auto flex flex-col items-center gap-2 p-3 mb-16" style="background-color: rgba(198, 189, 189, 1);">
+<section id="msg" class="hidden  w-[80%] mx-auto flex flex-col items-center gap-2 p-3 mb-16" style="background-color: rgba(198, 189, 189, 1);">
     <p class="font-normal text-[9px] " style="color: rgba(121, 113, 107, 1);">
         আপনি এখনো কোন Lesson Select করেন নি
     </p>
@@ -86,10 +88,83 @@
     </h1>
 </section>
 
-<section id="lessons" class="grid grid-cols-3 items-center justify-items-center border gap-3 w-[80%] mx-auto p-2" style="background-color:  rgba(248, 248, 248, 1);">
-
+<section id="lessons" class="grid hidden grid-cols-3 items-center justify-items-center  gap-3 w-[80%] mx-auto p-2 mb-9" style="background-color:  rgba(248, 248, 248, 1);">
+   
 </section>
 
+<section id="faq" class="flex hidden  flex-col items-center justify-around gap-10 mb-12 mt-20">
+
+    <h1 class="font-bold text-4xl "><span style="color: rgba(0, 188, 255, 1);">Frequently</span> Asked Questions</h1>
+
+    <div class="flex flex-col gap-2  w-[80%]">
+        <div class="collapse collapse-plus bg-base-100 border border-base-300" style="background-color:  rgba(248, 248, 248, 1);">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title font-semibold">1.How can I start learning English on this website?</div>
+            <div class="collapse-content text-sm"></div>
+          </div>
+          <div class="collapse collapse-plus bg-base-100 border border-base-300" style="background-color:  rgba(248, 248, 248, 1);">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">2.Is this website free to use?</div>
+            <div class="collapse-content text-sm"></div>
+          </div>
+          <div class="collapse collapse-plus bg-base-100 border border-base-300 " style="background-color:  rgba(248, 248, 248, 1);">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">3.Do I need to create an account?</div>
+            <div class="collapse-content text-sm"></div>
+          </div>
+          <div class="collapse collapse-plus bg-base-100 border border-base-300" style="background-color:  rgba(248, 248, 248, 1);">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">4.How can I build my English vocabulary?</div>
+            <div class="collapse-content text-sm"></div>
+          </div>
+
+          <div class="collapse collapse-plus bg-base-100 border border-base-300 " style="background-color:  rgba(248, 248, 248, 1);">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">5.Do you offer certificates for completed courses?</div>
+            <div class="collapse-content text-sm"></div>
+          </div>
+    </div>
+</section>
+
+<p class=" " style="border: 1px solid rgba(255, 235, 235, 1);"></p>
+<footer class="flex items-center justify-between w-[80%] mx-auto ">
+   <div class="flex flex-col">
+    <div class="flex items-center  ">
+        <h1 class="font-semibold text-lg ">English</h1>
+        <img src="./styles/assets/logo.png" alt="">
+        <h1>জানালা</h1>
+    
+    </div>
+    <h1 class="font-bold">ইংরেজি শিখুন সহজে</h1>
+    <p class="font-normal text-sm">Providing ED-Tech Applications since 2025</p>
+   </div>
+   
+    <div>
+        <p>follow us</p>
+        <div class="flex gap-1 items-center justify-center">
+            <img  onclick="window.open('https://www.facebook.com/?locale=fr_FR', '_blank', 'noopener,noreferrer')" src="./styles/assets/fb-thumb.png" alt="">
+            <img  onclick="window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer')" src="./styles/assets/instagram-thumb.png" alt="">
+            <img  onclick="window.open('https://www.youtube.com/', '_blank', 'noopener,noreferrer')" src="./styles/assets/youtube-thumb.png" alt="">
+        </div>
+    </div>
+</footer>
+
+<!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="my_modal_1" class="modal">
+  <div  class="modal-box ">
+     
+    <div id="shobDetails" class="flex flex-col justify-start gap-2">
+         
+    </div>
+    <div class="modal-action flex justify-start ">
+      <form class="" method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn text-white bg-blue-600 ">Complete Learning</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
 <script src="./script/index.js"></script>
 </body>
