@@ -19,12 +19,17 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.active-btn{
+    background-color: blue;
+    color: white;
+}
 </style>
 
 </head>
 <body id="" class="poppins-regular ">
      
-<nav id="khela" class="flex fixed w-full justify-around  hidden mb-48" style="background-color: rgba(198, 189, 189, 1);">
+<nav id="khela" class="flex fixed w-full justify-around z-50 hidden mb-48" style="background-color: rgba(198, 189, 189, 1);">
 <div class="flex items-center justify-center ">
     <h1 class="font-semibold text-lg ">English</h1>
     <img src="./styles/assets/logo.png" alt="">
@@ -42,7 +47,7 @@
      <p class="font-semibold text-xs " style="color: rgba(66, 42, 213, 1);">Learn</p>
     </button>
     <button onclick="meta()" class="flex border hover:bg-blue-500 gap-1 p-1 rounded-md " style="border-color: rgba(66, 42, 213, 1);">
-        <!-- onclick="location.href='#targetSection'" -->
+         
         <img class="w-4" src="./styles/assets/fa-arrow-right-from-bracket.png" alt="">
         <p class="font-semibold text-xs " style="color: rgba(66, 42, 213, 1);">Logout</p>
     </button>
@@ -99,35 +104,44 @@
     <div class="flex flex-col gap-2  w-[80%]">
         <div class="collapse collapse-plus bg-base-100 border border-base-300" style="background-color:  rgba(248, 248, 248, 1);">
             <input type="radio" name="my-accordion-3" checked="checked" />
-            <div class="collapse-title font-semibold">1.How can I start learning English on this website?</div>
-            <div class="collapse-content text-sm"></div>
+            <div class="collapse-title font-semibold">1.What is the difference between var,let,and const</div>
+            <div class="collapse-content text-sm">var is function-scoped, can be re-declared/reassigned, and is hoisted with undefined .
+               <br> let is block-scoped, can be reassigned but not re-declared, and prevents scope issues.
+               <br> const is block-scoped, cannot be reassigned, but objects/arrays can be modified</div>
           </div>
           <div class="collapse collapse-plus bg-base-100 border border-base-300" style="background-color:  rgba(248, 248, 248, 1);">
             <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-semibold">2.Is this website free to use?</div>
-            <div class="collapse-content text-sm"></div>
+            <div class="collapse-title font-semibold">2.Write the difference between map(), forEach(), and filter()?</div>
+            <div class="collapse-content text-sm">map():Iterates over an array, applies a transformation,and returns a new modified array. <br>
+                forEach():Iterates over an array but does not return a new array; mainly used for side effects like logging.
+                <br>
+                filter():Iterates over an array and returns a new array with elements that satisfy a given condition.
+            </div>
           </div>
           <div class="collapse collapse-plus bg-base-100 border border-base-300 " style="background-color:  rgba(248, 248, 248, 1);">
             <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-semibold">3.Do I need to create an account?</div>
-            <div class="collapse-content text-sm"></div>
+            <div class="collapse-title font-semibold">3.Explain arrow functions and how they are different from regular functions?</div>
+            <div class="collapse-content text-sm">Arrow functions are a shorthand way to write functions in JavaScript, introduced in ES6.
+                <br> They are different from regular functions in terms of syntax, this binding, and usage.</div>
           </div>
           <div class="collapse collapse-plus bg-base-100 border border-base-300" style="background-color:  rgba(248, 248, 248, 1);">
             <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-semibold">4.How can I build my English vocabulary?</div>
-            <div class="collapse-content text-sm"></div>
+            <div class="collapse-title font-semibold">4.How JavaScript Promises work?</div>
+            <div class="collapse-content text-sm">A Promise in JavaScript represents a value that may be available now, in the future, or never. It is used for handling asynchronous operations <br> like API calls, file reading, or timers.</div>
           </div>
 
           <div class="collapse collapse-plus bg-base-100 border border-base-300 " style="background-color:  rgba(248, 248, 248, 1);">
             <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title font-semibold">5.Do you offer certificates for completed courses?</div>
-            <div class="collapse-content text-sm"></div>
+            <div class="collapse-title font-semibold">5.How closures work in JavaScript?</div>
+            <div class="collapse-content text-sm">A closure is a function that remembers and can access its lexical scope or the scope in which it was defined, <br>
+                even when the function is executed outside that scope. Closures are a powerful feature of <br>
+                JavaScript and are often used for data encapsulation, callbacks, and creating function factories</div>
           </div>
     </div>
 </section>
 
 <p class=" " style="border: 1px solid rgba(255, 235, 235, 1);"></p>
-<footer class="flex items-center justify-between w-[80%] mx-auto ">
+<footer class="flex items-center justify-between w-[80%] h-80 mx-auto ">
    <div class="flex flex-col">
     <div class="flex items-center  ">
         <h1 class="font-semibold text-lg ">English</h1>
@@ -149,8 +163,7 @@
     </div>
 </footer>
 
-<!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+ 
 <dialog id="my_modal_1" class="modal">
   <div  class="modal-box ">
      
@@ -159,7 +172,7 @@
     </div>
     <div class="modal-action flex justify-start ">
       <form class="" method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
+         
         <button class="btn text-white bg-blue-600 ">Complete Learning</button>
       </form>
     </div>

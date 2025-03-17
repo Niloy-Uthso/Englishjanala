@@ -1,11 +1,14 @@
 document.getElementById('start').addEventListener('click',function(){
-    console.log('sjhd')
-    if(document.getElementById('name').value=='')
+    
+    if(document.getElementById('password').value==''&& document.getElementById('name').value=='')
+        alert("Please put name and password")
+        
+    else if(document.getElementById('name').value=='')
         alert("Please put your name first")
-    if(document.getElementById('password').value=='')
-        alert("Please put your Password first")
+   else if(document.getElementById('password').value==''&& document.getElementById('name').value!=='')
+        alert("Please put your Password")
 
-    if(document.getElementById('password').value=='123456')
+   else if(document.getElementById('password').value=='123456'&&document.getElementById('name').value!=='')
 
     {
         
@@ -20,7 +23,7 @@ document.getElementById('start').addEventListener('click',function(){
         
         
     }
-    else{
+   else  if(document.getElementById('password').value!=='123456'&& document.getElementById('password').value!==''){
         alert('Wrong password.Contact admin to get your login code')
     }
    
@@ -56,7 +59,7 @@ function displayDat(datas){
     {
         const  categoryDiv=document.createElement("div")
         categoryDiv.innerHTML=`
-          <button onclick="loadLessons(${les.level_no})" class="flex msg border hover:bg-blue-500 gap-1 p-1 rounded-md mt-10" style="border-color: rgba(66, 42, 213, 1);">
+          <button onclick="loadLessons(${les.level_no});setActive(this)" class="flex msg b border hover:bg-blue-500 gap-1 p-1 rounded-md mt-10" style="border-color: rgba(66, 42, 213, 1);">
      <img class="w-4" src="./styles/assets/fa-book-open.png" alt="">
      <p class="font-semibold text-xs " style="color: rgba(66, 42, 213, 1);">Lesson-${les.level_no}</p>
     </button>
@@ -68,12 +71,18 @@ function displayDat(datas){
 
 }
 
+function setActive(thi){
+    document.querySelectorAll('.b').forEach(btn => btn.classList.remove('active-btn'));
+
+    thi.classList.add('active-btn');
+}
+
 function loadLessons(les){
    const r=document.getElementById('msg')
    r.style.display='none'
    document.getElementById('lessons').classList.remove('hidden')
     const url=`https://openapi.programming-hero.com/api/level/${les}`
-//    console.log(url)
+ 
     fetch(url)
     .then((response)=>response.json())
     .then((dat)=>displayLesson(dat.data))
